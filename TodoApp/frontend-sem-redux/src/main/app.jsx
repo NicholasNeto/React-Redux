@@ -11,7 +11,6 @@ import Routes from './routes'
     <div className='container'>
         <Menu />
         <Routes />
-
     </div>
 )
 
