@@ -1,18 +1,15 @@
 import React from 'react'
+import If from '../helpers/If'
 
-const IconButton = (props) => {
+const IconButton = (props) => (
 
-    if(props.hide){
-        return null 
-    } else{
-        return (
-                <button className={'btn btn-' + props.style}>
-                    <i className={'fa fa-' + props.icon}></i>
-                </button>
-        )
-    }
+    <If test={!props.hide}>
+        <button className={'btn btn-' + props.style}>
+            <i className={'fa fa-' + props.icon}></i>
+        </button>
 
-}
+    </If>
+)
 
 
 export default IconButton
