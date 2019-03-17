@@ -4,13 +4,12 @@ import If from '../helpers/If'
 const IconButton = (props) => (
 
     <If test={!props.hide}>
-        <button className={'btn btn-' + props.style}>
+        <button className={'btn btn-' + props.style} onClick={props.onClick}>
             <i className={'fa fa-' + props.icon}></i>
         </button>
 
     </If>
 )
-
 
 export default IconButton
 
