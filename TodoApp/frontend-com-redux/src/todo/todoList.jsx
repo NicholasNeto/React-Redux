@@ -5,6 +5,7 @@ import IconButton from '../template/iconButton'
 
 const TodoList = (props) => {
 
+    console.log("TodoList", props.list)
     const renderRows = () => {
         const list = props.list || [] 
         return list.map( todo => (
@@ -35,7 +36,6 @@ const TodoList = (props) => {
         </table>
     )
 }
-
 
 
 const mapStateToProps = state => ({list: state.todo.list})
