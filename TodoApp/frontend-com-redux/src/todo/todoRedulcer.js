@@ -1,13 +1,20 @@
-    const INITIAL_STATE = { description: "", list: [] }
+import {
+    TODO_CLEAR, 
+    TODO_SEARCHED, 
+    TODO_ADDED, 
+    DESCRIPTION_CHANGED} from './constante'
+
+const INITIAL_STATE = { description: "", list: [] }
 
 
     export default (state = INITIAL_STATE, action ) => {
         switch(action.type){
-            case "DESCRIPTION_CHANGED":
+            case DESCRIPTION_CHANGED:
                 return { ...state, description: action.payload}
-            case "TODO_SEARCHED":
-                return { ...state, list: action.payload.data}
-            case 'TODO_ADDED':
+            case TODO_SEARCHED:
+                return { ...state, list: action.payload}
+            case TODO_ADDED:
+            case TODO_CLEAR:
                 return { ...state, description: "" }
             default:
                 return state
