@@ -13,6 +13,7 @@ class TodoForm extends React.Component {
         super(props)
 
         this.keyHandler = this.keyHandler.bind(this)
+        this.adicionar = this.adicionar.bind(this)
     }
 
     componentWillMount(){
@@ -26,6 +27,15 @@ class TodoForm extends React.Component {
             e.shiftKey ? search() : add(description)
         } else if(e.key === 'Escape'){
             clear()
+        }
+    }
+
+    adicionar(description){
+        const { add} = this.props
+        if(!description.length > 0){
+            alert("Você precisa adicionar uma tarefa.")
+        } else {
+            add(description)
         }
     }
 
@@ -45,7 +55,7 @@ class TodoForm extends React.Component {
                 </Grid>
 
                 <Grid cols='12 3 2'>
-                    <IconButton  style='primary' icon='plus' onClick={() => add(description)}></IconButton>
+                    <IconButton  style='primary' icon='plus' onClick={() => this.adicionar(description)}></IconButton>
                     <IconButton style='info' icon='search' onClick={search()}></IconButton>
                     <IconButton  style='default' icon='close' onClick={clear}></IconButton>
                 </Grid>
